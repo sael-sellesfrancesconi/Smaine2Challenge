@@ -1,0 +1,248 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+:root {
+    --bg-color: #E5D9F2;
+    --text-color: #2b0f99;
+    --content-bg: #F5EFFF;
+    
+    --link-color: #A594F9;
+    --link-hover-bg: #CDC1FF;
+    --link-hover-text: white;
+}
+
+.dark-mode {
+    --bg-color: #312f38;
+    --text-color: #e3c5d5;
+    --content-bg: #545066;
+    
+    --link-color: #9a8aa6;
+    --link-hover-bg: #9e8592;
+    --link-hover-text: white;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--bg-color);
+    margin: 0;
+    padding: 0;
+    color: var(--text-color);
+}
+
+header {
+    text-align: center;
+
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.divH2 button,
+header button{
+    
+    width: 140px;
+    height: 48px;
+    border-radius: 34px;
+    border: none;
+    
+    box-shadow: 3px 4px 12px rgba(0, 0, 0, 0.3), inset -3px -4px 12px rgba(0, 0, 250, 0.2);
+}
+
+.divH2 button:hover,
+header button:hover {
+    transition: 0.4s ease-in-out;
+    background: var(--link-color);
+    
+    box-shadow: 3px 4px 12px rgba(0, 0, 0, 0.3), inset 3px 4px 12px rgba(0, 0, 250, 0.5);
+}
+
+
+.container {
+    display: flex;
+    flex-direction: row;
+}
+
+section{
+    width: 100%;
+}
+
+nav {
+    width: 30vw;
+}
+
+.content_ {
+    background: var(--content-bg);
+    
+    margin: 16px;
+    padding: 20px;
+    
+    border-radius: 12px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease-in-out;
+}
+
+.content_:hover {
+    transform: scale(1.005);
+}
+
+h1 {
+    color: var(--text-color);
+    font-size: 26px;
+}
+
+h2 {
+    color: var(--text-color);
+    border-bottom: 3px solid var(--link-color);
+    padding-bottom: 8px;
+    font-size: 22px;
+}
+
+a {
+    display: block;
+    color: var(--link-color);
+    text-decoration: none;
+    font-weight: 600;
+    margin: 12px 0;
+    padding: 8px;
+    border-radius: 5px;
+    transition: all 0.3s ease-in-out;
+}
+
+a:hover {
+    color: var(--link-hover-text);
+    background: var(--link-hover-bg);
+    text-decoration: none;
+}
+
+button,
+input[type="text"],
+input[type="number"],
+input[type="password"],
+input[type="radio"] {
+    font-size: 1rem;
+    padding: 10px;
+    margin-bottom: 12px;
+    width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.divH2 {
+    border-bottom: 3px solid var(--link-color);
+    padding-bottom: 8px;
+    font-size: 22px;
+    
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+}
+
+.barre button {
+    border-radius: 10px;
+    width: 100%;
+    
+}
+
+.divH2 h2 {
+    border: none;
+}
+
+.barre{
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+}
+
+#toggle-auth {
+    margin-top: 20px;
+}
+
+#aff1, #aff2, #aff3 {
+    width: 50px;
+}
+
+#left,
+#right {
+    gap: 16px;
+}
+
+#left a,
+#right a {
+    margin: 0px;
+    padding: 16px;
+}
+
+#left a:hover,
+#right a:hover {
+    color: var(--link-hover-text);
+    background: var(--link-hover-bg);
+}
+
+input[type="submit"] {
+    background-color: var(--link-color);
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 4px;
+    width: 100%;
+    margin-top: 10px;
+    transition: background-color 0.3s;
+}
+
+input[type="submit"]:hover {
+    background-color: var(--link-hover-bg);
+}
+
+input[type="checkbox"] {
+    margin-left: 10px;
+    margin-bottom: 10px;
+    width: 100%;
+}
+
+button:hover {
+    transition: background-color 0.3s;
+    background-color: var(--link-hover-bg);
+}
+
+label {
+    font-size: 1rem;
+    color: #333;
+    margin-bottom: 8px;
+    display: inline-block;
+}
+
+
+@media only screen and (max-width: 600px) {
+  
+  .container {
+      flex-direction: column;
+  }
+  
+  header button {
+      width: 100px;
+      height: 70px;
+  }
+  
+  h1{
+      font-size: 20px;
+  }
+  
+  section {
+      max-width: 82%;
+  }
+  
+  #right {
+      display: inline-block;
+  }
+  
+}
