@@ -1,6 +1,3 @@
-<?php
-session_start();
-?>
 
         <form method="post" action="./codes/action_traitement_connexion.php">
                     

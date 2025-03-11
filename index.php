@@ -7,30 +7,51 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <?php include("../../assets/includes/include_default_head.html"); ?>
-    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="icon" type="image/x-icon" href="https://marvinfm.fr/assets/images/icon.png">
     <title>Accueil // Trouver un stage </title>
     <link rel="stylesheet" href="./codes/styles_default.css">
 </head>
 <body>
-    <header class="content_">
-        <h1> Trouver un stage </h1>
-        <div class="barre">
-            <a> Accueil </a>
-            <a> Rechercher stage </a>
-            <a> Voir employeurs </a>
-            <a> Espace compte </a>
+    <header>
+        <div>
+            <h1> Trouver un stage </h1>
         </div>
-        <button id="toggle-mode"><i class="fa-solid fa-moon"></i></button>
-		<a href="https://marvinfm.fr"><i class="fa-solid fa-house"></i></a>
+        <div id="centre_header">
+            <h3><a href="./"> Accueil </a></h3>
+            <h3><a href="./index.php?page=recherche_stage"> Rechercher stage </a></h3>
+            <h3><a href="./index.php?page=connexion"> Connexion </a></h3>
+            <h3><a href="./index.php?page=inscription"> Inscription </a></h3>
+        </div>
+        <div id="droite_header">
+            <button id="toggle-mode"><i class="fa-solid fa-moon"></i></button>
+		    <a href="https://marvinfm.fr"><i class="fa-solid fa-house"></i></a>
+		</div>
     </header>
+    <div class="container">
+        <section class="content_">
+            <?php 
+            if (isset($_GET['page'])){
+                if ($_GET['page'] === "connexion") {
+                    include("./codes/include_connexion.php");
+                } else if ($_GET['page'] === "inscription") {
+                    include("./codes/include_inscription.php"); 
+                }
+            }
+                
+            ?>
+        </section>
+        
+    </div>
+
+    
     <!--
     <div class="container">
         <section id="left" class="content_">
             <div id="auth-container">
-            <?php 
-            include("./codes/include_connexion.php");
-            ?>
+            
             </div>
             <?php
                 if (isset($_SESSION['error'])) {
@@ -45,23 +66,11 @@
         </section>
         <section id="right" class="content_">
             <div id="new-account-container">
-            <?php 
-            include("./codes/include_inscription.php"); 
-            ?>
+            
             </div>
-            <?php
-                if (isset($_SESSION['error'])) {
-                    echo "<p style='color:red;'>" . $_SESSION['error'] . "</p>";
-                    unset($_SESSION['error']); // Supprimer l'erreur après affichage
-                }
-                if (isset($_SESSION['success'])) {
-                    echo "<p style='color:green;'>" . $_SESSION['success'] . "</p>";
-                    unset($_SESSION['success']); // Supprimer le message de succès après affichage
-                }
-            ?>
         </section>
-        -->
-    </div>
+        
+    </div>-->
     <script src="./codes/script_toggle-mode.js"></script>
     <script src="./codes/script_toggle-password.js"></script>
 </body>

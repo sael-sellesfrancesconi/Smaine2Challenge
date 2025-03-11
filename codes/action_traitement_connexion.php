@@ -1,6 +1,4 @@
 <?php
-session_start();
-
 // Vérif POST
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
