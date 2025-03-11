@@ -22,47 +22,31 @@
             <a> Espace compte </a>
         </div>
         <button id="toggle-mode"><i class="fa-solid fa-moon"></i></button>
-		<a href="https://marvinfm.fr"><i class="fa-solid fa-house"></i></a>
+        <a href="https://marvinfm.fr"><i class="fa-solid fa-house"></i></a>
     </header>
-    <!--
     <div class="container">
         <section id="left" class="content_">
             <div id="auth-container">
-            <?php 
-            include("./codes/include_connexion.php");
-            ?>
+                <label for="role-select">Je suis:</label>
+                <select id="role-select">
+                    <option value="">Sélectionnez</option>
+                    <option value="professeur">Professeur</option>
+                    <option value="eleve">Élève</option>
+                    <option value="employeur">Employeur</option>
+                </select>
+                <div id="auth-buttons" style="display: none;">
+                    <button id="inscription-button">Inscription</button>
+                    <button id="connexion-button">Connexion</button>
+                </div>
             </div>
-            <?php
-                if (isset($_SESSION['error'])) {
-                    echo "<p style='color:red;'>" . $_SESSION['error'] . "</p>";
-                    unset($_SESSION['error']); // Supprimer l'erreur après affichage
-                }
-                if (isset($_SESSION['success'])) {
-                    echo "<p style='color:green;'>" . $_SESSION['success'] . "</p>";
-                    unset($_SESSION['success']); // Supprimer le message de succès après affichage
-                }
-            ?>
         </section>
         <section id="right" class="content_">
             <div id="new-account-container">
-            <?php 
-            include("./codes/include_inscription.php"); 
-            ?>
             </div>
-            <?php
-                if (isset($_SESSION['error'])) {
-                    echo "<p style='color:red;'>" . $_SESSION['error'] . "</p>";
-                    unset($_SESSION['error']); // Supprimer l'erreur après affichage
-                }
-                if (isset($_SESSION['success'])) {
-                    echo "<p style='color:green;'>" . $_SESSION['success'] . "</p>";
-                    unset($_SESSION['success']); // Supprimer le message de succès après affichage
-                }
-            ?>
         </section>
-        -->
     </div>
     <script src="./codes/script_toggle-mode.js"></script>
     <script src="./codes/script_toggle-password.js"></script>
+    <script src="./codes/script_role_selection.js"></script>
 </body>
 </html>
