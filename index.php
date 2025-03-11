@@ -14,7 +14,7 @@
 </head>
 <body>
     <header class="content_">
-        <h1> Trouver un stage TEST </h1>
+        <h1> Trouver un stage </h1>
         <div class="barre">
             <a> Accueil </a>
             <a> Rechercher stage </a>
