@@ -21,7 +21,8 @@
             <a> Voir employeurs </a>
             <a> Espace compte </a>
         </div>
-        <button id="toggle-mode"> Mode Figue </button>
+        <button id="toggle-mode"><i class="fa-solid fa-moon"></i></button>
+		<a href="https://marvinfm.fr"><i class="fa-solid fa-house"></i></a>
     </header>
     <!--
     <div class="container">
