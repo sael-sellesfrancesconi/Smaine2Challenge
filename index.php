@@ -40,37 +40,17 @@
                     include("./codes/include_inscription.php"); 
                 }
             }
-                
+            if (isset($_SESSION['error'])) {
+                echo "<p style='color:red;'>" . $_SESSION['error'] . "</p>";
+                unset($_SESSION['error']); // Supprimer l'erreur après affichage
+            }
+            if (isset($_SESSION['success'])) {
+                echo "<p style='color:green;'>" . $_SESSION['success'] . "</p>";
+                unset($_SESSION['success']); // Supprimer le message de succès après affichage
+            }
             ?>
-        </section>
-        
+        </section>  
     </div>
-
-    
-    <!--
-    <div class="container">
-        <section id="left" class="content_">
-            <div id="auth-container">
-            
-            </div>
-            <?php
-                if (isset($_SESSION['error'])) {
-                    echo "<p style='color:red;'>" . $_SESSION['error'] . "</p>";
-                    unset($_SESSION['error']); // Supprimer l'erreur après affichage
-                }
-                if (isset($_SESSION['success'])) {
-                    echo "<p style='color:green;'>" . $_SESSION['success'] . "</p>";
-                    unset($_SESSION['success']); // Supprimer le message de succès après affichage
-                }
-            ?>
-        </section>
-        <section id="right" class="content_">
-            <div id="new-account-container">
-            
-            </div>
-        </section>
-        
-    </div>-->
     <script src="./codes/script_toggle-mode.js"></script>
     <script src="./codes/script_toggle-password.js"></script>
 </body>
