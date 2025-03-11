@@ -31,15 +31,16 @@
 		</div>
     </header>
     <div class="container">
-        <section class="content_">
-            <?php 
-            if (isset($_GET['page'])){
-                if ($_GET['page'] === "connexion") {
-                    include("./codes/include_connexion.php");
-                } else if ($_GET['page'] === "inscription") {
-                    include("./codes/include_inscription.php"); 
-                }
+        <?php 
+        if (isset($_GET['page'])){
+            echo "<section class='content_'>";
+
+            if ($_GET['page'] === "connexion") {
+                include("./codes/include_connexion.php");
+            } else if ($_GET['page'] === "inscription") {
+                include("./codes/include_inscription.php"); 
             }
+
             if (isset($_SESSION['error'])) {
                 echo "<p style='color:red;'>" . $_SESSION['error'] . "</p>";
                 unset($_SESSION['error']); // Supprimer l'erreur après affichage
@@ -48,8 +49,10 @@
                 echo "<p style='color:green;'>" . $_SESSION['success'] . "</p>";
                 unset($_SESSION['success']); // Supprimer le message de succès après affichage
             }
-            ?>
-        </section>  
+            
+            echo "</section>";
+        }
+        ?>
     </div>
     <script src="./codes/script_toggle-mode.js"></script>
     <script src="./codes/script_toggle-password.js"></script>
