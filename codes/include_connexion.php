@@ -1,4 +1,3 @@
-
         <form id="form" method="post" action="./codes/action_traitement_connexion.php">
             
             <h2> Connexion </h2>

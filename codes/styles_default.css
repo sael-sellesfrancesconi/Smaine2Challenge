@@ -143,6 +143,7 @@ input[type="submit"] {
     margin-top: 10px;
 }
 
+select,
 button,
 input {
     font-size: 1rem;
