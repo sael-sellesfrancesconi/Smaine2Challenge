@@ -1,7 +1,6 @@
 
         <form id="form" method="post" action="./codes/action_traitement_connexion.php">
             
-             
             <h2> Connexion </h2>
             <br>  
             <h3> Identifiant </h3>
