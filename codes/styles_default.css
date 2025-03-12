@@ -134,6 +134,11 @@ header a {
     width: 45vw;
 }
 
+#form h3 {
+    margin-top: 7px;
+    margin-bottom: 5px;
+}
+
 input[type="submit"] {
     color: var(--text-color);
     background-color: var(--link-color);

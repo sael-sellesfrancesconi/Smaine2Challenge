@@ -22,8 +22,7 @@
         <div id="centre_header">
             <h3><a href="./"> Accueil </a></h3>
             <h3><a href="./index.php?page=recherche_stage"> Rechercher stage </a></h3>
-            <h3><a href="./index.php?page=connexion"> Connexion </a></h3>
-            <h3><a href="./index.php?page=inscription"> Inscription </a></h3>
+            <h3><a href="./index.php?page=auth"> Connexion / Inscription </a></h3>
         </div>
         <div id="droite_header">
             <button id="toggle-mode"><i class="fa-solid fa-moon"></i></button>
@@ -31,30 +30,16 @@
 		</div>
     </header>
     <div class="container">
-        <?php 
-        if (isset($_GET['page'])){
-            echo "<section class='content_'>";
-
-            if ($_GET['page'] === "connexion") {
-                include("./codes/include_connexion.php");
-            } else if ($_GET['page'] === "inscription") {
-                include("./codes/include_inscription.php"); 
+        <?php
+        if (isset($_GET['page'])) {
+            if ($_GET['page'] == 'auth') {
+                include('./codes/include_auth.php');
             }
-
-            if (isset($_SESSION['error'])) {
-                echo "<p style='color:red;'>" . $_SESSION['error'] . "</p>";
-                unset($_SESSION['error']); // Supprimer l'erreur après affichage
-            }
-            if (isset($_SESSION['success'])) {
-                echo "<p style='color:green;'>" . $_SESSION['success'] . "</p>";
-                unset($_SESSION['success']); // Supprimer le message de succès après affichage
-            }
-            
-            echo "</section>";
         }
         ?>
     </div>
     <script src="./codes/script_toggle-mode.js"></script>
     <script src="./codes/script_toggle-password.js"></script>
+    <script src="./codes/script_role_selection.js"></script>
 </body>
 </html>
